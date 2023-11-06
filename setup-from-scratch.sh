@@ -18,6 +18,12 @@ if [[ "$current_dir_name" == "dev-env" ]] && [[ $(basename "$(dirname "$current_
     cd ../..
 fi
 
+if [[ "$current_dir_name" == "salmagundi" ]]; then
+    echo "In the wrong directory. Going back..."
+    cd ..
+fi
+
+
 # Define the root directory where 'salmagundi' should be
 root_dir=$(pwd)
 
