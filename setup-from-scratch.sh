@@ -13,7 +13,7 @@ current_dir=$(pwd)
 current_dir_name=$(basename "$current_dir")
 
 # Check if the current directory is 'dev-env' and the parent directory is 'salmagundi'
-if [[ "$current_dir_name" == "dev-env" ]] && [[ $(basename "$(dirname "$current_dir")") == "salmagundi" ]]; then
+if [[ "$current_dir_name" == "salmagundi-kubernetes-dev-env" ]] && [[ $(basename "$(dirname "$current_dir")") == "salmagundi" ]]; then
     echo "In the wrong directory. Going back..."
     cd ../..
 fi
@@ -29,14 +29,14 @@ root_dir=$(pwd)
 
 # Define the directory path for 'salmagundi' and 'dev-env'
 salmagundi_dir="$root_dir/salmagundi"
-dev_env_dir="$salmagundi_dir/dev-env"
+dev_env_dir="$salmagundi_dir/salmagundi-kubernetes-dev-env"
 
 # Create the 'salmagundi' directory if it doesn't exist
 mkdir -p "$salmagundi_dir"
 
 # Clone or pull the dev-env repo if necessary
 if [ -d "$dev_env_dir/.git" ]; then
-    echo "'dev-env' already exists. Pulling the latest changes..."
+    echo "'salmagundi-kubernetes-dev-env' already exists. Pulling the latest changes..."
     git -C "$dev_env_dir" pull
 else
     echo "Cloning 'dev-env'..."
