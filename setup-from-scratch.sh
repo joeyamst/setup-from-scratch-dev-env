@@ -40,7 +40,7 @@ if [ -d "$dev_env_dir/.git" ]; then
     git -C "$dev_env_dir" pull
 else
     echo "Cloning 'dev-env'..."
-    git clone "git@ssh.dev.azure.com:v3/CloudCompetenceCenter/salmagundi/dev-env" "$dev_env_dir"
+    git clone "git@github.com:Amsterdam/salmagundi-kubernetes-dev-env" "$dev_env_dir"
 fi
 
 # Navigate to the 'dev-env' directory
