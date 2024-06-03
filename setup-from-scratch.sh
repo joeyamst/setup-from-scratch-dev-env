@@ -27,7 +27,7 @@ fi
 # Define the root directory where 'salmagundi' should be
 root_dir=$(pwd)
 
-# Define the directory path for 'salmagundi' and 'dev-env'
+# Define the directory path for 'salmagundi' and 'salmagundi-kubernetes-dev-env'
 salmagundi_dir="$root_dir/salmagundi"
 dev_env_dir="$salmagundi_dir/salmagundi-kubernetes-dev-env"
 
@@ -39,12 +39,12 @@ if [ -d "$dev_env_dir/.git" ]; then
     echo "'salmagundi-kubernetes-dev-env' already exists. Pulling the latest changes..."
     git -C "$dev_env_dir" pull
 else
-    echo "Cloning 'dev-env'..."
-    git clone "git@github.com:Amsterdam/salmagundi-kubernetes-dev-env" "$dev_env_dir"
+    echo "Cloning 'salmagundi-kubernetes-dev-env'..."
+    git clone "git@github.com:Amsterdam/salmagundi-kubernetes-dev-env.git" "$dev_env_dir"
 fi
 
-# Navigate to the 'dev-env' directory
-cd "$dev_env_dir" || exit_with_message "Failed to navigate to the 'dev-env' directory."
+# Navigate to the 'salmagundi-kubernetes-dev-env' directory
+cd "$dev_env_dir" || exit_with_message "Failed to navigate to the 'salmagundi-kubernetes-dev-env' directory."
 
 # Execute the make clone command
 if ! make clone; then
